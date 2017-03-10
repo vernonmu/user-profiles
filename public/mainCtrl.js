@@ -7,14 +7,9 @@ angular.module('userProfiles')
 				$location.path('/profile');
 			} else {
 				alert('user not found');
+				
 			}
-
-
-
 		});
-
-
-
 	}
 
 });

@@ -40,27 +40,22 @@ angular.module('userProfiles')
 				$location.path('/profile');
 			} else {
 				alert('user not found');
+				
 			}
-
-			friendService.getFriends(user).then(function(response) {
-				console.log(response)
-				$scope.currentUser = response.data
-				$scope.friends = response.data.friends
-				console.log($scope.friends);
-				console.log($scope.currentUser);
-
-
-			})
-
 		});
-
-
-
 	}
 
 });
 
 angular.module('userProfiles')
-.controller('profileCtrl', function( $scope ) {
-	// FIX ME - assign values to $scope.currentUser and $scope.friends
+.controller('profileCtrl', function( $scope, friendService ) {
+
+	friendService.getFriends().then(function(response) {
+		console.log(response)
+		$scope.currentUser = response.data.user
+		$scope.friends = response.data.friends
+		console.log($scope.friends);
+		console.log($scope.currentUser);
+	})
+
 });

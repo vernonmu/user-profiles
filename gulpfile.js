@@ -8,7 +8,7 @@ var path = {
   css: ['public/css/*.css']
 }
 
-gulp.task('default', ['del', 'build', 'minify'], function() {
+gulp.task('default', ['del', 'build', 'minify', 'watch'], function() {
   console.log('go gulp, go!');
 });
 
@@ -27,3 +27,7 @@ gulp.task('minify', function() {
     .pipe(concat('build.css'))
     .pipe(gulp.dest('public'))
 });
+
+gulp.task('watch', function() {
+  gulp.watch(path.scripts, path.css, ['build'])
+})
