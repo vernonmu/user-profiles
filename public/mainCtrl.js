@@ -9,15 +9,7 @@ angular.module('userProfiles')
 				alert('user not found');
 			}
 
-			friendService.getFriends(user).then(function(response) {
-				console.log(response)
-				$scope.currentUser = response.data
-				$scope.friends = response.data.friends
-				console.log($scope.friends);
-				console.log($scope.currentUser);
 
-
-			})
 
 		});
 

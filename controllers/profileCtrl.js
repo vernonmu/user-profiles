@@ -39,6 +39,6 @@ module.exports = {
       }
     }
 
-    res.status(200).json(req.session.currentUser)
+    res.status(200).json({user: req.session.currentUser, friends: newArr})
   }
 };

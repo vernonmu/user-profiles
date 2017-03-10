@@ -23,6 +23,7 @@
     "express-session": "^1.15.1"
   },
   "devDependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.0.3",
     "gulp-concat": "^2.6.1"
