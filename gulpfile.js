@@ -25,9 +25,11 @@ gulp.task('build', function() {
 gulp.task('minify', function() {
   gulp.src(path.css)
     .pipe(concat('build.css'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('public'))
 });
 
 gulp.task('watch', function() {
-  gulp.watch(path.scripts, path.css, ['build'])
+  gulp.watch(path.scripts, ['build'])
+  gulp.watch(path.css, ['minify'])
 })
