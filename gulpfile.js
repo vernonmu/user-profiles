@@ -19,6 +19,6 @@ gulp.task('build', function() {
 
 gulp.task('minify', function() {
   gulp.src(path.css)
-    .pipe(concat(style.css))
+    .pipe(concat('styles.css'))
     .pipe(gulp.dest('public'))
 });
